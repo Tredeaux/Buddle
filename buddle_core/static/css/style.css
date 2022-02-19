@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+i {
+    font-size: 18px;
+    margin: 5px;
+}
+
+.post-image {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border: 1px solid lightgray;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    float:left;
+}
+
+.card {
+    width: 500px;
+}
+
+.description {
+    border: 1px solid grey;
+    padding: 5px;
+}
+
+.post {
+    height: 700px;
+}
+
+.post-image:hover {
+    box-shadow: 0 2px 50px rgba(0, 0, 0, 0.2);
+    border: 1px solid #0E6DFD;
+    cursor:pointer;
+}
+
+/* The alert message box */
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    margin-bottom: 15px;
+    height: 100%;
+}
+
+/* The close button */
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+    color: black;
+}
+
+.card-banner {
+    padding: 10px;
+    width: 100%;
+    height: auto;
+    background-color: #0E6DFD;
+    color: white;
+}
+
+.card-inner {
+    padding: 40px;
+}

@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Buddle | Register
+{% endblock %}
+
+{% block header %}
+
+{% endblock %}
+
+{% block body %}
+    <center>
+        <br><br><br>
+        <div class="card">
+            <div class="card-banner">
+                <h1>Welcome</h1>
+            </div>
+            <div class="card-inner">
+                <form method="POST" action="">
+                    <label for="inputUsername" class="form-label">Username</label>
+                    <input type="text" name='username' class="form-control" id="inputUsername">
+                    <br>
+                    <label for="inputEmail" class="form-label">Email address</label>
+                    <input type="email" name='email' class="form-control" id="inputEmail">
+                    <br>
+                    <label for="inputPassword" class="form-label">Password</label>
+                    <input onchange="checkPasswords()" name='password' type="password" id="inputPassword" class="form-control" aria-describedby="passwordHelpBlock">
+                    <div id="passwordHelpBlock" class="form-text">
+                       No less than 8 characters long and must contain letters, numbers and symbols
+                    </div>
+                    <br>
+                    <label for="inputPassword2" class="form-label">Enter password again</label>
+                    <input onchange="checkPasswords()" type="password" id="inputPassword2" class="form-control" aria-describedby="passwordHelpBlock2">
+                    <div id="passwordHelpBlock2" class="form-text">
+                    </div>
+                    <br>
+                    <div class="d-grid gap-2">
+                        <input id='register' class='btn btn-primary' type="submit" value="register">
+                    </div>
+                    <br><br>
+                    <p>Already have an account?  <a href="{{ url_for('index') }}">Log in</a></p>
+                </form>
+            </div>
+        </div>
+    </center>
+
+    <script>
+        function checkPasswords() {
+            let password1 = document.getElementById('inputPassword');
+            let password2 = document.getElementById('inputPassword2');
+            let help_text = document.getElementById('passwordHelpBlock2');
+
+            password1.classList.remove('is-invalid');
+            password2.classList.remove('is-invalid');
+            help_text.innerText = '';
+
+
+            // Passwords match
+            if (password1.value !== password2.value) {
+                console.log(password1.value);
+                console.log(password2.value);
+
+                help_text.innerText += 'Passwords do not match\n';
+                password1.classList.add('is-invalid');
+                password2.classList.add('is-invalid');
+            }
+
+            let pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/
+            if (pattern.test(password1.value) === false) {
+                password1.classList.add('is-invalid');
+                help_text.innerText += 'Password must match criteria\n';
+            }
+        }
+    </script>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Buddle | Settings
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block body %}
+    <center>
+        <br><br><br>
+        <div class="card">
+            <div class="card-banner">
+                <h1>Settings</h1>
+            </div>
+            <div class="card-inner">
+                <form method="POST" action="">
+                    <label for="inputUsername" class="form-label">Username</label>
+                    <br>
+                    <input type='text' class="form-control" placeholder="{{ user.user_name }}" id="inputUsername">
+                    <br><br>
+                    <label for="inputEmail" class="form-label">Email</label>
+                    <br>
+                    <input type='email' class="form-control" placeholder="{{ user.email }}" id="inputEmail">
+                </form>
+            </div>
+        </div>
+    </center>
+{% endblock %}

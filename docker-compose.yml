@@ -1,0 +1,30 @@
+version: '3'
+services:
+    web:
+        build: .
+        environment:
+            DB_HOST: db
+            DB_PASSWORD: postgres
+            DB_USER: postgres
+            DB_PORT: 5432
+            PORT: 5000
+        command: python dev.py
+        depends_on:
+            - db
+        ports:
+            - "5000:5000"
+        volumes:
+            - "./:/buddle_core"
+    db:
+        image: postgres:10
+        restart: always
+        environment:
+            POSTGRES_PASSWORD: "postgres"
+            POSTGRES_INITDB_ARGS: "-E utf8"
+            PGDATA: "/var/lib/postgresql/data/buddle_core_db"
+        ports:
+            - "5432:5432"
+        volumes:
+            - buddle_core_db:/var/lib/postgresql/data/
+volumes:
+    buddle_core_db:

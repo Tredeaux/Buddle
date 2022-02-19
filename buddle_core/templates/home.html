@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Buddle | Home
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block navbar_content %}
+
+{% endblock %}
+
+
+
+{% block body %}
+    <center>
+        <br>
+        <div class="container">
+              <div class="row justify-content-start">
+                  {% for post in posts %}
+                      <div class="col-md-4">
+                          <img class="post-image" src="{{ url_for('static', filename=post.image) }}"/>
+                      </div>
+                  {% endfor %}
+              </div>
+        </div>
+{#        <div class="container">#}
+{#            <div class="row">#}
+{#                    {% for post in posts %}#}
+{#                        <div class="col">#}
+{#                            <div class="card post">#}
+{#                                <div class="card-banner">#}
+{#                                    <h1>{{ post.title }}</h1>#}
+{#                                </div>#}
+{#                                <div class="card-inner">#}
+{#                                    <img class="post-image" src="{{ url_for('static', filename=post.image) }}"/>#}
+{#                                    {{ (post.creation_date|string)[:10] }}#}
+{#                                    <br><br>#}
+{#                                    <div class="description">#}
+{#                                        {{ post.description }}#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div>#}
+{##}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <br><br>#}
+{##}
+{#                        </div>#}
+{##}
+{#                    {% endfor %}#}
+{#            </div>#}
+{#        </div>#}
+
+
+    </center>
+{% endblock %}

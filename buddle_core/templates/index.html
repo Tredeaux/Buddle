@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Buddle | Login
+{% endblock %}
+
+{% block header %}
+
+{% endblock %}
+
+{% block body %}
+    <center>
+        <br><br><br>
+        <div class="card">
+            <div class="card-banner">
+                <h1>Welcome</h1>
+            </div>
+            <div class="card-inner">
+                <form method="POST" action="">
+                    <label for="inputEmail" class="form-label">Email address</label>
+                    <input type="email" name="email" class="form-control" id="inputEmail" required>
+                    <br>
+                    <label for="inputPassword" class="form-label">Password</label>
+                    <input type="password" name="password" id="inputPassword" class="form-control" required>
+                    <br>
+                    <div class="d-grid gap-2">
+                        <input class='btn btn-primary' type="submit">
+                    </div>
+                    <br><br>
+                    <p>Not registered?  <a href="{{ url_for('register') }}">Register here</a></p>
+                </form>
+            </div>
+        </div>
+    </center>
+{% endblock %}
